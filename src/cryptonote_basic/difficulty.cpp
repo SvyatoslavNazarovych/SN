@@ -103,7 +103,7 @@ namespace cryptonote {
     return a + b < a || (c && a + b == (uint64_t) -1);
   }
 
-  bool check_hash_64(const crypto::hash &hash, uint64_t difficulty) {
+  bool check_hash(const crypto::hash &hash, difficulty_type difficulty) {
     uint64_t low, high, top, cur;
     // First check the highest word, this will most likely fail for a random hash.
     mul(swap64le(((const uint64_t *) &hash)[3]), difficulty, top, high);
@@ -120,7 +120,7 @@ namespace cryptonote {
     return !carry;
   }
 
-  uint64_t next_difficulty_64(std::vector<std::uint64_t> timestamps, std::vector<uint64_t> cumulative_difficulties, size_t target_seconds) {
+  difficulty_type next_difficulty(std::vector<std::uint64_t> timestamps, std::vector<difficulty_type> cumulative_difficulties, size_t target_seconds) {
 
     if(timestamps.size() > DIFFICULTY_WINDOW)
     {
@@ -151,6 +151,7 @@ namespace cryptonote {
     if (time_span == 0) {
       time_span = 1;
     }
+<<<<<<< HEAD
     uint64_t total_work = cumulative_difficulties[cut_end - 1] - cumulative_difficulties[cut_begin];
     assert(total_work > 0);
     uint64_t low, high;
@@ -342,6 +343,18 @@ namespace cryptonote {
       s += "0";
     std::reverse(s.begin(), s.end());
     return "0x" + s;
+=======
+    difficulty_type total_work = cumulative_difficulties[cut_end - 1] - cumulative_difficulties[cut_begin];
+    assert(total_work > 0);
+    uint64_t low, high;
+    mul(total_work, target_seconds, low, high);
+    // blockchain errors "difficulty overhead" if this function returns zero.
+    // TODO: consider throwing an exception instead
+    if (high != 0 || low + time_span - 1 < low) {
+      return 0;
+    }
+    return (low + time_span - 1) / time_span;
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
   }
 
 }

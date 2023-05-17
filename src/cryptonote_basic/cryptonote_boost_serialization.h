@@ -40,7 +40,6 @@
 #include <boost/archive/portable_binary_iarchive.hpp>
 #include <boost/archive/portable_binary_oarchive.hpp>
 #include "cryptonote_basic.h"
-#include "difficulty.h"
 #include "common/unordered_containers_boost_serialization.h"
 #include "crypto/crypto.h"
 #include "ringct/rctTypes.h"
@@ -499,6 +498,7 @@ namespace boost
     a & x.range_proof_type;
     a & x.bp_version;
   }
+<<<<<<< HEAD
 
   template <class Archive>
   inline void serialize(Archive &a, cryptonote::difficulty_type &x, const boost::serialization::version_type ver)
@@ -550,6 +550,8 @@ namespace boost
     a & x.signature;
   }
 
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 }
 }
 

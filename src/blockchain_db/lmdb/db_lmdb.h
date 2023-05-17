@@ -454,6 +454,7 @@ private:
   // migrate from DB version 3 to 4
   void migrate_3_4();
 
+<<<<<<< HEAD
   // migrate from DB version 4 to 5
   void migrate_4_5();
 
@@ -466,6 +467,8 @@ private:
   // migrate from DB version 6 to 7
   void migrate_7_8();
 
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
   void cleanup_batch();
 
 private:

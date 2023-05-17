@@ -3006,6 +3006,7 @@ bool Blockchain::find_blockchain_supplement(const std::list<crypto::hash>& qbloc
   return true;
 }
 //------------------------------------------------------------------
+<<<<<<< HEAD
 bool Blockchain::get_pricing_record(offshore::pricing_record& pr, uint64_t timestamp)
 {
   LOG_PRINT_L1("Requesting pricing record from Oracle - time : " << timestamp);
@@ -3070,6 +3071,9 @@ bool Blockchain::get_pricing_record(offshore::pricing_record& pr, uint64_t times
 }
 //------------------------------------------------------------------
 difficulty_type Blockchain::block_difficulty(uint64_t i) const
+=======
+uint64_t Blockchain::block_difficulty(uint64_t i) const
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 {
   LOG_PRINT_L3("Blockchain::" << __func__);
   // WARNING: this function does not take m_blockchain_lock, and thus should only call read only
@@ -3352,11 +3356,15 @@ bool Blockchain::find_blockchain_supplement(const std::list<crypto::hash>& qbloc
 
   bool result = find_blockchain_supplement(qblock_ids, resp.m_block_ids, &resp.m_block_weights, resp.start_height, resp.total_height, clip_pruned);
   if (result)
+<<<<<<< HEAD
   {
     cryptonote::difficulty_type wide_cumulative_difficulty = m_db->get_block_cumulative_difficulty(resp.total_height - 1);
     resp.cumulative_difficulty = (wide_cumulative_difficulty & 0xffffffffffffffff).convert_to<uint64_t>();
     resp.cumulative_difficulty_top64 = ((wide_cumulative_difficulty >> 64) & 0xffffffffffffffff).convert_to<uint64_t>();
   }
+=======
+    resp.cumulative_difficulty = m_db->get_block_cumulative_difficulty(resp.total_height - 1);
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 
   return result;
 }
