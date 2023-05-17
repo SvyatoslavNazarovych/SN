@@ -499,6 +499,7 @@ namespace boost
     a & x.bp_version;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   template <class Archive>
   inline void serialize(Archive &a, cryptonote::difficulty_type &x, const boost::serialization::version_type ver)
@@ -550,6 +551,8 @@ namespace boost
     a & x.signature;
   }
 
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 }

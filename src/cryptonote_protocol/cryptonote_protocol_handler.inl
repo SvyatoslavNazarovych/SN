@@ -408,9 +408,13 @@ namespace cryptonote
     m_core.get_blockchain_top(hshd.current_height, hshd.top_id);
     hshd.top_version = m_core.get_ideal_hard_fork_version(hshd.current_height);
 <<<<<<< HEAD
+<<<<<<< HEAD
     difficulty_type wide_cumulative_difficulty = m_core.get_block_cumulative_difficulty(hshd.current_height);
     hshd.cumulative_difficulty = (wide_cumulative_difficulty & 0xffffffffffffffff).convert_to<uint64_t>();
     hshd.cumulative_difficulty_top64 = ((wide_cumulative_difficulty >> 64) & 0xffffffffffffffff).convert_to<uint64_t>();
+=======
+    hshd.cumulative_difficulty = m_core.get_block_cumulative_difficulty(hshd.current_height);
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
     hshd.cumulative_difficulty = m_core.get_block_cumulative_difficulty(hshd.current_height);
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)

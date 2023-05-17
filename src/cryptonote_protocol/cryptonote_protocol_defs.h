@@ -258,10 +258,13 @@ namespace cryptonote
       KV_SERIALIZE(current_height)
       KV_SERIALIZE(cumulative_difficulty)
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (is_store)
         KV_SERIALIZE(cumulative_difficulty_top64)
       else
         KV_SERIALIZE_OPT(cumulative_difficulty_top64, (uint64_t)0)
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
       KV_SERIALIZE_VAL_POD_AS_BLOB(top_id)
@@ -304,10 +307,13 @@ namespace cryptonote
         KV_SERIALIZE(total_height)
         KV_SERIALIZE(cumulative_difficulty)
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (is_store)
           KV_SERIALIZE(cumulative_difficulty_top64)
         else
           KV_SERIALIZE_OPT(cumulative_difficulty_top64, (uint64_t)0)
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
         KV_SERIALIZE_CONTAINER_POD_AS_BLOB(m_block_ids)

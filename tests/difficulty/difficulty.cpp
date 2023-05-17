@@ -46,9 +46,13 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     TRY_ENTRY();
 
     if (argc < 2) {
+=======
+    if (argc != 2) {
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
     if (argc != 2) {
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
@@ -80,6 +84,7 @@ int main(int argc, char *argv[]) {
             return 1;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         cryptonote::difficulty_type wide_res = cryptonote::next_difficulty(
             std::vector<uint64_t>(timestamps.begin() + begin, timestamps.begin() + end),
             std::vector<cryptonote::difficulty_type>(wide_cumulative_difficulties.begin() + begin, wide_cumulative_difficulties.begin() + end), DEFAULT_TEST_DIFFICULTY_TARGET);
@@ -89,6 +94,8 @@ int main(int argc, char *argv[]) {
                 << "Found: " << wide_res << endl;
             return 1;
         }
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
         timestamps.push_back(timestamp);

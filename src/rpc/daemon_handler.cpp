@@ -538,8 +538,12 @@ namespace rpc
     auto& chain = m_core.get_blockchain_storage();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     res.info.wide_difficulty = chain.get_difficulty_for_next_block();
     res.info.difficulty = (res.info.wide_difficulty & 0xffffffffffffffff).convert_to<uint64_t>();
+=======
+    res.info.difficulty = chain.get_difficulty_for_next_block();
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
     res.info.difficulty = chain.get_difficulty_for_next_block();
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
@@ -564,8 +568,12 @@ namespace rpc
     res.info.testnet = m_core.get_nettype() == TESTNET;
     res.info.stagenet = m_core.get_nettype() == STAGENET;
 <<<<<<< HEAD
+<<<<<<< HEAD
     res.info.wide_cumulative_difficulty = m_core.get_blockchain_storage().get_db().get_block_cumulative_difficulty(res.info.height - 1);
     res.info.cumulative_difficulty = (res.info.wide_cumulative_difficulty & 0xffffffffffffffff).convert_to<uint64_t>();
+=======
+    res.info.cumulative_difficulty = m_core.get_blockchain_storage().get_db().get_block_cumulative_difficulty(res.info.height - 1);
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
     res.info.cumulative_difficulty = m_core.get_blockchain_storage().get_db().get_block_cumulative_difficulty(res.info.height - 1);
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
@@ -947,8 +955,12 @@ namespace rpc
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     header.wide_difficulty = m_core.get_blockchain_storage().block_difficulty(header.height);
     header.difficulty = (header.wide_difficulty & 0xffffffffffffffff).convert_to<uint64_t>();
+=======
+    header.difficulty = m_core.get_blockchain_storage().block_difficulty(header.height);
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
     header.difficulty = m_core.get_blockchain_storage().block_difficulty(header.height);
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)

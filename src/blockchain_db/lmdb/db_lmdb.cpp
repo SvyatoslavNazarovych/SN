@@ -58,7 +58,11 @@ using namespace crypto;
 
 // Increase when the DB structure changes
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define VERSION 8
+=======
+#define VERSION 4
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
 #define VERSION 4
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
@@ -327,6 +331,7 @@ typedef struct mdb_block_info_3
 } mdb_block_info_3;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 typedef struct mdb_block_info_4
 {
   uint64_t bi_height;
@@ -371,6 +376,9 @@ typedef struct mdb_block_info_6
 } mdb_block_info_6;
 
 typedef mdb_block_info_6 mdb_block_info;
+=======
+typedef mdb_block_info_3 mdb_block_info;
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
 typedef mdb_block_info_3 mdb_block_info;
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
@@ -850,8 +858,12 @@ void BlockchainLMDB::add_block(const block& blk, size_t block_weight, uint64_t l
   bi.bi_coins = coins_generated;
   bi.bi_weight = block_weight;
 <<<<<<< HEAD
+<<<<<<< HEAD
   bi.bi_diff_hi = ((cumulative_difficulty >> 64) & 0xffffffffffffffff).convert_to<uint64_t>();
   bi.bi_diff_lo = (cumulative_difficulty & 0xffffffffffffffff).convert_to<uint64_t>();
+=======
+  bi.bi_diff = cumulative_difficulty;
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
   bi.bi_diff = cumulative_difficulty;
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
@@ -5959,6 +5971,7 @@ void BlockchainLMDB::migrate_3_4()
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void BlockchainLMDB::migrate_4_5()
 {
   LOG_PRINT_L3("BlockchainLMDB::" << __func__);
@@ -6707,6 +6720,8 @@ void BlockchainLMDB::migrate_7_8()
 
 =======
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 void BlockchainLMDB::migrate(const uint32_t oldversion)
 {
   if (oldversion < 1)
@@ -6717,6 +6732,7 @@ void BlockchainLMDB::migrate(const uint32_t oldversion)
     migrate_2_3();
   if (oldversion < 4)
     migrate_3_4();
+<<<<<<< HEAD
 <<<<<<< HEAD
   if (oldversion < 5)
     migrate_4_5();
@@ -6736,6 +6752,8 @@ void BlockchainLMDB::migrate(const uint32_t oldversion)
     migrate_7_8();
   }
   // at the end data format and the db version will be the same.
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 }

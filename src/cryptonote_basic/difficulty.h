@@ -33,9 +33,12 @@
 #include <cstdint>
 #include <vector>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <string>
 #include <boost/multiprecision/cpp_int.hpp>
 =======
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 #include "crypto/hash.h"

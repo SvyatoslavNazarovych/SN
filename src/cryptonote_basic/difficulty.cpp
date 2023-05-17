@@ -152,6 +152,7 @@ namespace cryptonote {
       time_span = 1;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     uint64_t total_work = cumulative_difficulties[cut_end - 1] - cumulative_difficulties[cut_begin];
     assert(total_work > 0);
     uint64_t low, high;
@@ -344,6 +345,8 @@ namespace cryptonote {
     std::reverse(s.begin(), s.end());
     return "0x" + s;
 =======
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
     difficulty_type total_work = cumulative_difficulties[cut_end - 1] - cumulative_difficulties[cut_begin];
     assert(total_work > 0);
     uint64_t low, high;
@@ -354,6 +357,9 @@ namespace cryptonote {
       return 0;
     }
     return (low + time_span - 1) / time_span;
+<<<<<<< HEAD
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
+=======
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
   }
 

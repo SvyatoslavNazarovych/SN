@@ -130,6 +130,7 @@ namespace
     return (value + quantum - 1) / quantum * quantum;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   void store_128(boost::multiprecision::uint128_t value, uint64_t &slow64, std::string &swide, uint64_t &stop64)
   {
@@ -142,6 +143,8 @@ namespace
   {
     store_128(difficulty, sdiff, swdiff, stop64);
   }
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 }
@@ -1775,6 +1778,7 @@ namespace cryptonote
 =======
     blob_reserve.resize(req.reserve_size, 0);
     if(!m_core.get_block_template(b, info.address, res.difficulty, res.height, res.expected_reward, blob_reserve))
+<<<<<<< HEAD
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
     {
       if(!string_tools::parse_hexstr_to_binbuff(req.extra_nonce, blob_reserve))
@@ -1790,6 +1794,8 @@ namespace cryptonote
     cryptonote::difficulty_type wdiff;
     crypto::hash prev_block;
     if (!req.prev_block.empty())
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
     {
       if (!epee::string_tools::hex_to_pod(req.prev_block, prev_block))
       {
@@ -1798,6 +1804,7 @@ namespace cryptonote
         return false;
       }
     }
+<<<<<<< HEAD
     uint64_t seed_height;
     crypto::hash seed_hash, next_seed_hash;
     if (!get_block_template(info.address, req.prev_block.empty() ? NULL : &prev_block, blob_reserve, reserved_offset, wdiff, res.height, res.expected_reward, b, res.seed_height, seed_hash, next_seed_hash, error_resp))
@@ -1811,6 +1818,8 @@ namespace cryptonote
 
     res.reserved_offset = reserved_offset;
     store_difficulty(wdiff, res.difficulty, res.wide_difficulty, res.difficulty_top64);
+=======
+>>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
 =======
 >>>>>>> parent of 91f4c7f45 (Make difficulty 128 bit instead of 64 bit)
     blobdata block_blob = t_serializable_object_to_blob(b);
